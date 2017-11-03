@@ -1,6 +1,6 @@
 <?php
 
-namespace kolyasiryk\behaviors;
+namespace kolyasiryk\yii2behavior\behaviors;
 
 use yii\base\Behavior;
 use yii\base\InvalidParamException;
