@@ -1,0 +1,24 @@
+{
+  "name": "kolyasiryk/yii2-date-behavior",
+  "description": "This behavior makes it easy to save and to take date in correct format.",
+  "keywords": ["behavior", "active record", "yii2", "date"],
+  "homepage": "https://github.com/KolyaSirik/yii2-date-behavior",
+  "type": "yii2-behavior",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kolya Siryk",
+      "email": "kolyasirik@gmail.com",
+      "homepage": "https://github.com/KolyaSirik"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "yiisoft/yii2": "^2"
+  },
+  "autoload": {
+    "psr-4": {
+      "kolyasiryk\\behaviors\\": ""
+    }
+  }
+}
