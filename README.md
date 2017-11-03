@@ -8,13 +8,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 To install, either run
 
 ```
-$ php composer.phar require kartik-v/yii2-widget-datetimepicker "*"
+$ php composer.phar require kolyasiryk/yii2-date-behavior "*"
 ```
 
 or add
 
 ```
-"kartik-v/yii2-widget-datetimepicker": "*"
+"kolyasiryk/yii2-date-behavior": "*"
 ```
 
 to the ```require``` section of your `composer.json` file.
