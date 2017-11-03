@@ -113,7 +113,13 @@ class DateBehavior extends Behavior
                     throw new InvalidParamException('$format has incorrect value');
                 }
 
-                $this->owner->setAttribute($attribute, $this->formatter->format($value, [$format, $dateFormat]));
+                if ($dateFormat === 'U') {
+                    $value = (int) $this->formatter->asTimestamp($value);
+                } else {
+                    $value = $this->formatter->format($value, [$format, $dateFormat]);
+                }
+
+                $this->owner->setAttribute($attribute, $value);
             }
         }
     }
