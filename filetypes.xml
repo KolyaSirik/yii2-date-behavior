@@ -1,0 +1,15 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="connect" type="Bash" />
+      <mapping pattern="tests" type="Bash" />
+      <mapping pattern="deploy" type="Bash" />
+      <mapping pattern="cron" type="PLAIN_TEXT" />
+      <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping ext="bin" type="PLAIN_TEXT" />
+      <mapping ext="wt" type="PLAIN_TEXT" />
+      <mapping ext="bson" type="PLAIN_TEXT" />
+      <mapping ext="lock" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
