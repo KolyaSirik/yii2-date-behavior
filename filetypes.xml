@@ -4,6 +4,7 @@
       <mapping pattern="connect" type="Bash" />
       <mapping pattern="tests" type="Bash" />
       <mapping pattern="deploy" type="Bash" />
+      <mapping pattern=".env.dist" type="PLAIN_TEXT" />
       <mapping pattern="cron" type="PLAIN_TEXT" />
       <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
       <mapping ext="bin" type="PLAIN_TEXT" />
