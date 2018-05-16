@@ -4,7 +4,7 @@ namespace kolyasiryk\yii2behavior\behaviors;
 
 use yii\base\Behavior;
 use yii\base\Exception;
-use yii\base\InvalidParamException;
+use yii\base\InvalidArgumentException;
 use yii\db\BaseActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\i18n\Formatter;
@@ -98,19 +98,28 @@ class DateBehavior extends Behavior
      *
      * @param array $formats
      * @param string $event
-     * @throws InvalidParamException|Exception
+     * @throws InvalidArgumentException|Exception
      */
     protected function updateAttributes($formats, $event)
     {
         foreach ($this->attributes as $attribute => $format) {
             if ($value = $this->owner->getAttribute($attribute)) {
                 if (!$dateFormat = ArrayHelper::getValue($formats, $format)) {
-                    throw new InvalidParamException('$format has incorrect value');
+                    throw new InvalidArgumentException('$format has incorrect value');
                 }
+
+                if (!is_int($value)) {
+                    $fromFormats = $event === self::EVENT_SET ? $this->displayFormats() : $this->saveFormats();
+                    $date = \DateTime::createFromFormat(ArrayHelper::getValue($fromFormats, $format), $value);
+                    $formatDate = $date ? $date->format('Y-m-d H:i:s') : $value;
+                } else {
+                    $formatDate = date('Y-m-d H:i:s', $value);
+                }
+
 
                 $userTimezone = new \DateTimeZone($this->userTimezone);
                 $gmtTimezone = new \DateTimeZone('UTC');
-                $myDateTime = new \DateTime(is_int($value) ? date('Y-m-d H:i:s', $value) : $value, $gmtTimezone);
+                $myDateTime = new \DateTime($formatDate, $gmtTimezone);
 
                 switch ($event) {
                     case self::EVENT_GET:
