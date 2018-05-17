@@ -7,6 +7,8 @@
       <mapping pattern=".env.dist" type="PLAIN_TEXT" />
       <mapping pattern="cron" type="PLAIN_TEXT" />
       <mapping pattern=".gitkeep" type="PLAIN_TEXT" />
+      <mapping pattern=".env.local" type="PLAIN_TEXT" />
+      <mapping pattern=".env.prod" type="PLAIN_TEXT" />
       <mapping ext="bin" type="PLAIN_TEXT" />
       <mapping ext="wt" type="PLAIN_TEXT" />
       <mapping ext="bson" type="PLAIN_TEXT" />
